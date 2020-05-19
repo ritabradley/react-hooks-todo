@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Todo = ({ todo, index, completeTodo }) => (
+const Todo = ({ todo, index, completeTodo, removeTodo }) => (
     <div
         className={
             todo.isCompleted
@@ -11,10 +11,16 @@ const Todo = ({ todo, index, completeTodo }) => (
         {todo.text}
         <div>
             <button
-                className='rounded-md py-2 px-3 bg-green-600 text-green-100 hover:bg-green-800'
+                className='rounded-md py-2 px-3 mx-2 bg-green-600 text-green-100 hover:bg-green-800'
                 onClick={() => completeTodo(index)}
             >
                 Complete
+            </button>
+            <button
+                className='rounded-md py-2 px-3 mx-2 bg-red-600 text-red-100 hover:bg-red-800'
+                onClick={() => removeTodo(index)}
+            >
+                Delete
             </button>
         </div>
     </div>

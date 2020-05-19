@@ -16,11 +16,16 @@ function App() {
         setTodos(newTodos);
     };
 
+    const removeTodo = (i) => {
+        const newTodos = [...todos];
+        newTodos.splice(i, 1);
+        setTodos(newTodos);
+    };
     return (
         <div className=' flex justify-center'>
             <div className='p-8 w-1/2'>
                 {todos.map((todo, i) => (
-                    <Todo key={i} index={i} todo={todo} completeTodo={completeTodo} />
+                    <Todo key={i} index={i} todo={todo} completeTodo={completeTodo} removeTodo={removeTodo} />
                 ))}
                 <TodoForm addTodo={addTodo} />
             </div>
